@@ -1,0 +1,5 @@
+/*在css中也可用同样的标签调用组件*/
+<!--load('base@0.0.1')-->
+.bg{}
+.container{}
+.header{}

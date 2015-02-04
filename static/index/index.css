@@ -1,0 +1,8 @@
+/*在css中也可用同样的标签调用组件*/
+/*<!--load('base@0.0.1')-->*/
+.bg{
+	height: 1200px;
+	background: url(./bg.jpg) no-repeat center top;
+}
+.container{}
+.header{}

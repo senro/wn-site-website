@@ -1,0 +1,91 @@
+﻿.nav {
+    margin: 0 auto;
+    width: 1001px;
+}
+.navWrap {
+    margin: 0 auto;
+    width: 1001px;
+}
+.navBtns {
+    height: 66px;
+    margin: 0 auto;
+    width: 1001px;
+}
+.navBtn {
+    color: #000;
+    float: left;
+    font-size: 16px;
+    height: 66px;
+    line-height: 66px;
+    padding: 0 16px;
+    text-align: center;
+    text-decoration: none;
+}
+.navBtn:hover, .navBtn_hover {
+    color: #f36f42;
+}
+.navBtn-home {
+}
+.enText {
+    color: #71a7c3;
+    font-family: "Times New Roman",serif;
+    font-size: 14px;
+}
+.navBtn-game {
+}
+.navBtn-data {
+}
+.navBtn-download {
+    margin-left: 230px;
+}
+.navBtn-service {
+}
+.navBtn-community {
+}
+.navContBg {
+    height: 291px;
+    overflow: hidden;
+    visibility: hidden;
+}
+.navCont {
+    height: 129px;
+    margin: 0 auto;
+    width: 1001px;
+}
+.subNavs {
+    display: inline;
+    float: left;
+    height: 138px;
+    padding: 20px 0 10px;
+    width: 96px;
+}
+.subNavBtn {
+    color: #000;
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    text-decoration: none;
+}
+.subNavBtn:hover {
+    background-color: #f36f42;
+    color: #fff;
+}
+.gameSub {
+    margin-left: 0;
+}
+.homeSub:hover {
+    background-color: transparent;
+}
+.downloadSub {
+    margin-left: 0;
+}
+.serviceSub {
+    margin-left: 229px;
+}
+.communitySub {
+    margin-left: 0;
+    width: 96px;
+}
+/*可以使用fis自带的语法加载组件内的内部依赖，编译后会把menuBtns.css的代码合并到下面*/
+/*@import url(menuBtns.css?__inline);*/
