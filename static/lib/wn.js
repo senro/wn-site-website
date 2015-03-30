@@ -1,4 +1,13 @@
-
+//loadScript('a.js', function(){
+//    alert(a.name);
+//});
+//1.识别amd规范的模块
+//2.异步加载amd规范的模块
+//3.别名配置
+//4.自动分析依赖配置
+//5.类似nodejs向上搜索机制，根据标识符自动去分析真实路径
+//6.请求合并
+//7.debug模式
 var require,define;
 
 (function(){
@@ -17,6 +26,18 @@ var require,define;
         return newArr;
     };
     function log(str){
+        /*
+         * @位置：  核心公用方法；
+         * @名字：  console；
+         * @翻译：  输出（ 值 ）；
+         * @参数：  console( str )
+         *         str任意值【必填】；
+         * @功能：  针对ie不支持console做兼容，保证ie使用console不报错；
+         * @返回：  无；
+         * @实例：  /test-html/3.2/core/console.html；
+         * @需要：  无；
+         * @备注：  暂无；
+         */
         (function() {
             var method;
             var noop = function () {};
@@ -47,7 +68,7 @@ var require,define;
         factoryMap[id]=factory;
     };
     require=function(id){
-        if(require.config.alias[id]){
+        if(require.config&&require.config.alias&&require.config.alias[id]){
             id=require.config.alias[id];
         }
         if(/\.css/g.test(id)){
@@ -64,6 +85,28 @@ var require,define;
         var factory = factoryMap[id];
         if (!factory) {
             log('Cannot find module `' + id + '`');
+            //throw Error('Cannot find module `' + id + '`');
+            //如果找不到模块的工厂函数，说明还没有被加载
+//            console.log(require.config);
+//            if(require.config.alias[id]&&!hasLoad[id]){
+//                var deps= findDeps(require.config.alias[id]).distinct();//['a','c']
+//                deps.splice(0, 0, id);
+//                log(deps);
+//                for(var i=0;i<deps.length;i++){
+//                    var dep=deps[i];
+//                    var depRealName=require.config.alias[dep];
+//                    loadScript(require.config.base||''+depRealName, dep,function(dep){
+//                        hasLoad[dep]=true;
+//                        log(dep+' has loaded!');
+//                        if(dep==id){
+//                            log('dep==id!');
+//                            require(id);
+//                        }
+//                    });
+//                }
+//            }else{
+//                log('can\'t find '+id+' \' alias!');
+//            }
         }
 
         mod = modulesMap[id] = {
